@@ -102,11 +102,60 @@ render() {
 Other methods are written just before return()
 
 ```
+
 ```
 In the return is where the HTML CODE IS APPENDED WHEN USING REACT...
 MY THINK for the render method refers to what is now happening to the component.
 this.setState react method!
 JSX-JAVASCRIPT INSIDE OF YOUR HTML CODE!
 APP.JS IS THE MAIN ENTRY POINT OF THE APPLICATION!
+
+```
+
+**React remember points**
+
+```
+You use props when transferring state from one component to the net.
+
+Redux simplifies the work by introducing application level state.
+
+Redux brings in actions example when we make a submit to a form thats an action.Same as when we make a fetch.
+
+Reducers respons to the action bringing in the new state.
+
+
+```
+
+**Installing Redux**
+
+```
+(a)npm i redux react-redux redux-thunk
+
+react-redux-links react to redux
+redux-thunk enables the making of asynchronous calls.
+```
+
+```
+Provider is the glue class in redux impoted in the main app.js.
+Takes in the store which is the state
+
+A store holds the whole state tree of your application. The only way to change the state inside it is to dispatch an action on it.
+
+action Have an effect to the reducers..reducers have an effect to the state or the store.
+
+You combine the reducers eg post reducer can be combined with the other reducers to return the final state.
+
+The root reducer is the sum of all the reducers.
+```
+
+```
+Postreducer in this project evaluates the actions which normally are created as constants in the actions folder.
+
+```
+
+```
+The reducer return the state from the actions..
+And thus can be mounted unto the component props..
+
 
 ```
