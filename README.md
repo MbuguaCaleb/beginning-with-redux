@@ -1,68 +1,112 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Beginning-with-redux
 
-## Available Scripts
+**Overall Idea of Redux**
 
-In the project directory, you can run:
+```
+In react we have components whereby each component  uniquely has its state..
 
-### `npm start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+However in Large Projects it becomes tedious managing each individual component  with its state and this is the idea of redux.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+And this is where any state manager comes in.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Instead of component level state you get application Level State as a one way data flow..
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+**REDUX FLOW**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+State  is just a javascript object with values in it..
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Here is an overview of the Major flow in react
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+(a)Store  ->This is your actual level state.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+(b)View ->these are  your components which receive data from your state.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+(c)Action Creator ->Components have the ability to instantiate action creators each when you submit via a button and which will in turn affect the state.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+And this is where the reducers are called .
 
-### Analyzing the Bundle Size
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
 
-### Making a Progressive Web App
+(d)Reducers -> These are functions that will return the new state thus components react accordingly.(triggered by any change of state)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+```
 
-### Advanced Configuration
+**ThisProject**
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+```
+App has a post component which  will fetch posts from a fake JSON Place Holder API..
 
-### Deployment
+We also have a form component which is a very different component from the posts lists but can add
+data to the posts.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+```
 
-### `npm run build` fails to minify
+**Commands**
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+```
+(a)npx create-react-app .
+
+(b)App sudo saving permissions-> sudo chmod -R 777 *
+
+(c)Component will mount is a lifecycle method that runs when the component does mount.
+
+
+(d)fetch and axios can be used to make requests to external apis.Both are asynchronus and return promises.
+
+
+(e)Remeber that when you are looping through so as to access data you need a unique
+key otherwise react will throw an error.
+
+
+
+
+
+
+```
+
+**JSX**
+
+Jsx refers to rendering javascript code in the inside of HTML
+
+```
+render() {
+    //so as to access the state
+    const postItems = this.state.posts.map(post => {
+      <div key={post.id}>
+        <h3>{post.title}</h3>
+        <p>{post.body}</p>
+      </div>;
+    });
+    return (
+      <div>
+        <h1>Posts</h1>
+        {postItems}
+      </div>
+    );
+  }
+
+```
+
+```
+Other methods are written just before return()
+
+```
+```
+In the return is where the HTML CODE IS APPENDED WHEN USING REACT...
+MY THINK for the render method refers to what is now happening to the component.
+this.setState react method!
+JSX-JAVASCRIPT INSIDE OF YOUR HTML CODE!
+APP.JS IS THE MAIN ENTRY POINT OF THE APPLICATION!
+
+```
