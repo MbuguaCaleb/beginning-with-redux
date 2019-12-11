@@ -159,3 +159,34 @@ And thus can be mounted unto the component props..
 
 
 ```
+
+```
+Adding the redux extension as an enhancer in store.
+
+This redux chrome extension maybe well used
+to view the application Level State.
+Dispatch is used since data is being passed to the reducer from the Action.
+
+```
+
+**KEY-POINT**
+
+```
+How an action passes data to the reducer and how after being passed to
+ the reducer is passed to the Component.
+
+```
+
+**Connect function**
+
+```
+Plays a very important function in mapping data from the reducer and now to
+the new component.
+
+```
+
+**Notes**
+
+```
+By Mbugua Caleb
+```
